@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +34,9 @@ import butterknife.ButterKnife;
  * Created by paozi on 2016/4/13.
  */
 public class VideoListFragment extends Fragment {
+
+    public static final String TAG = "VideoListFragment";
+
     public static final String VIDEO_TYPE_ARG = "com.example.videoplayer.video.type";
     private static final String URL = "http://dn-chunyu.qbox.me/fwb/static/images/home/video/video_aboutCY_A.mp4";
     private static final String[] LOCAL_VIDEO_NAMES = new String[]{
@@ -57,7 +61,7 @@ public class VideoListFragment extends Fragment {
         mVideoPlayerManager = new SingleVideoPlayerManager(new PlayerItemChangeListener() {
             @Override
             public void onPlayerItemChanged(MetaData currentItemMetaData) {
-
+                Log.i(TAG, "onPlayerItemChanged: " + currentItemMetaData.toString());
             }
         });
 
@@ -155,7 +159,7 @@ public class VideoListFragment extends Fragment {
     }
 
     private void initLocalVideo() {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 40; i++) {
             mList.add(new LocalVideoListItem(mVideoPlayerManager, LOCAL_VIDEO_NAMES[i % 4], R.drawable.avatar, getFileDes(LOCAL_VIDEO_NAMES[i % 4])));
         }
     }

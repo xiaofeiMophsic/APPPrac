@@ -2,6 +2,7 @@ package com.example.videoplayer;
 
 import android.graphics.Rect;
 import android.support.annotation.DrawableRes;
+import android.util.Log;
 import android.view.View;
 
 import com.volokh.danylo.video_player_manager.manager.VideoItem;
@@ -49,9 +50,9 @@ public abstract class VideoListItem implements VideoItem, ListItem{
         int height = view.getHeight();
 
         if (viewPartiallyHiddenInTop()){
-            percent = (height - mCurrentViewRect.top) / height * 100;
+            percent = (height - mCurrentViewRect.top) * 100 / height ;
         } else if(viewPartiallyHiddenInBottom(height)){
-            percent = mCurrentViewRect.bottom / height;
+            percent = mCurrentViewRect.bottom * 100 / height;
         }
 
         setVisibilePercent(view, percent);
@@ -60,6 +61,7 @@ public abstract class VideoListItem implements VideoItem, ListItem{
 
     @Override
     public void setActive(View newActiveView, int newActiveViewPosition) {
+        Log.i("Video List Item", "setActive: 播放新的视频");
         VideoListAdapter.VideoViewHolder holder = (VideoListAdapter.VideoViewHolder) newActiveView.getTag();
         playNewVideo(new CurrentItemMetaData(newActiveViewPosition, newActiveView), holder.getVideoPlayerView(), mVideoPlayerManager);
     }

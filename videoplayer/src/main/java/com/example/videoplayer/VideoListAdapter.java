@@ -2,6 +2,7 @@ package com.example.videoplayer;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+import com.volokh.danylo.video_player_manager.manager.VideoPlayerManager;
+import com.volokh.danylo.video_player_manager.meta.MetaData;
 import com.volokh.danylo.video_player_manager.ui.MediaPlayerWrapper;
 import com.volokh.danylo.video_player_manager.ui.VideoPlayerView;
 
@@ -23,7 +26,6 @@ import butterknife.ButterKnife;
 public class VideoListAdapter extends RecyclerView.Adapter<VideoListAdapter.VideoViewHolder>{
 
     private List<VideoListItem> mList;
-
     public VideoListAdapter(List<VideoListItem> list) {
         mList = list;
     }
@@ -70,12 +72,12 @@ public class VideoListAdapter extends RecyclerView.Adapter<VideoListAdapter.Vide
 
                 @Override
                 public void onVideoPreparedMainThread() {
-                    mImageCover.setVisibility(View.VISIBLE);
+                    mImageCover.setVisibility(View.INVISIBLE);
                 }
 
                 @Override
                 public void onVideoCompletionMainThread() {
-
+                    mImageCover.setVisibility(View.VISIBLE);
                 }
 
                 @Override
@@ -85,7 +87,7 @@ public class VideoListAdapter extends RecyclerView.Adapter<VideoListAdapter.Vide
 
                 @Override
                 public void onBufferingUpdateMainThread(int percent) {
-
+                    Log.i("VideoListAdapter", "从缓冲区加载数据...." + percent);
                 }
 
                 @Override
