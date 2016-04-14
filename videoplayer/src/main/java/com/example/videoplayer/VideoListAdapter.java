@@ -30,7 +30,7 @@ public class VideoListAdapter extends RecyclerView.Adapter<VideoListAdapter.Vide
 
     @Override
     public VideoViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_video_item, parent);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_video_item, parent, false);
         VideoViewHolder videoViewHolder = new VideoViewHolder(view);
         view.setTag(videoViewHolder);
 
@@ -59,7 +59,7 @@ public class VideoListAdapter extends RecyclerView.Adapter<VideoListAdapter.Vide
 
         public VideoViewHolder(View view) {
             super(view);
-            ButterKnife.bind(view);
+            ButterKnife.bind(this, view);
 
             this.mContext = view.getContext().getApplicationContext();
             mMediaPlayerListener = new MediaPlayerWrapper.MainThreadMediaPlayerListener() {
