@@ -38,7 +38,7 @@ public class VideoListFragment extends Fragment {
     public static final String TAG = "VideoListFragment";
 
     public static final String VIDEO_TYPE_ARG = "com.example.videoplayer.video.type";
-    private static final String URL = "http://dn-chunyu.qbox.me/fwb/static/images/home/video/video_aboutCY_A.mp4";
+    private static final String URL = "http://mvvideo1.meitudata.com/5710cfe9135432244.mp4";
     private static final String[] LOCAL_VIDEO_NAMES = new String[]{
             "local_video_1.mp4",
             "local_video_2.mp4",
@@ -159,14 +159,20 @@ public class VideoListFragment extends Fragment {
     }
 
     private void initLocalVideo() {
-        for (int i = 0; i < 40; i++) {
+        if (!mList.isEmpty()){
+            mList.clear();
+        }
+        for (int i = 0; i < 10; i++) {
             mList.add(new LocalVideoListItem(mVideoPlayerManager, LOCAL_VIDEO_NAMES[i % 4], R.drawable.avatar, getFileDes(LOCAL_VIDEO_NAMES[i % 4])));
         }
     }
 
     private void initOnlineVideo() {
+        if (!mList.isEmpty()){
+            mList.clear();
+        }
         for (int i = 0; i < 10; i++){
-            mList.add(new OnlineVideoListItem(mVideoPlayerManager, LOCAL_VIDEO_NAMES[i % 4], R.drawable.avatar, URL));
+            mList.add(new OnlineVideoListItem(mVideoPlayerManager, ONLINE_VIDEO_NAME, R.drawable.avatar, URL));
         }
     }
 

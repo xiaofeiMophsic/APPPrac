@@ -1,1 +1,1 @@
-include ':app', ':broadtest2', ':myapp', ':weather'
+include ':app', ':broadtest2', ':myapp', ':weather', ':observable', ':videoplayer', ':musicvisualizer', ':testipc1', ':testipc2', ':ipcservice', ':testipc2', ':okhttp-sample', ':popupwindow', ':imageviewpager', ':analogclockview'

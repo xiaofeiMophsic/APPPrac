@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.example.ipcservice">
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+        <service
+            android:name=".service.MyService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":rytong_push_service"
+            >
+            <intent-filter>
+                <action android:name="com.example.ipcservice.AIDLServer"/>
+            </intent-filter>
+        </service>
+        <receiver android:name=".receiver.PushReceiver">
+            <intent-filter>
+                <action android:name="com.example.pushreceiver"></action>
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

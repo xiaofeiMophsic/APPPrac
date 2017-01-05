@@ -3,9 +3,19 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/APPPrac.iml" filepath="$PROJECT_DIR$/APPPrac.iml" />
+      <module fileurl="file://$PROJECT_DIR$/analogclockview/analogclockview.iml" filepath="$PROJECT_DIR$/analogclockview/analogclockview.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/broadtest2/broadtest2.iml" filepath="$PROJECT_DIR$/broadtest2/broadtest2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/imageviewpager/imageviewpager.iml" filepath="$PROJECT_DIR$/imageviewpager/imageviewpager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ipcservice/ipcservice.iml" filepath="$PROJECT_DIR$/ipcservice/ipcservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/musicvisualizer/musicvisualizer.iml" filepath="$PROJECT_DIR$/musicvisualizer/musicvisualizer.iml" />
       <module fileurl="file://$PROJECT_DIR$/myapp/myapp.iml" filepath="$PROJECT_DIR$/myapp/myapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/observable/observable.iml" filepath="$PROJECT_DIR$/observable/observable.iml" />
+      <module fileurl="file://$PROJECT_DIR$/okhttp-sample/okhttp-sample.iml" filepath="$PROJECT_DIR$/okhttp-sample/okhttp-sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/popupwindow/popupwindow.iml" filepath="$PROJECT_DIR$/popupwindow/popupwindow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testipc1/testipc1.iml" filepath="$PROJECT_DIR$/testipc1/testipc1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testipc2/testipc2.iml" filepath="$PROJECT_DIR$/testipc2/testipc2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/videoplayer/videoplayer.iml" filepath="$PROJECT_DIR$/videoplayer/videoplayer.iml" />
       <module fileurl="file://$PROJECT_DIR$/weather/weather.iml" filepath="$PROJECT_DIR$/weather/weather.iml" />
     </modules>
   </component>

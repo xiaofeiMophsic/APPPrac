@@ -7,11 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
-import com.volokh.danylo.video_player_manager.manager.VideoPlayerManager;
-import com.volokh.danylo.video_player_manager.meta.MetaData;
 import com.volokh.danylo.video_player_manager.ui.MediaPlayerWrapper;
 import com.volokh.danylo.video_player_manager.ui.VideoPlayerView;
 
@@ -55,7 +54,7 @@ public class VideoListAdapter extends RecyclerView.Adapter<VideoListAdapter.Vide
         @Bind(R.id.item_video_cover) ImageView mImageCover;
         @Bind(R.id.item_video_title) TextView mVideoTitle;
         @Bind(R.id.item_video_percent) TextView mVideoPercent;
-
+        @Bind(R.id.id_progressBar) ProgressBar mProgressBar;
         private Context mContext;
         private MediaPlayerWrapper.MainThreadMediaPlayerListener mMediaPlayerListener;
 
@@ -73,6 +72,7 @@ public class VideoListAdapter extends RecyclerView.Adapter<VideoListAdapter.Vide
                 @Override
                 public void onVideoPreparedMainThread() {
                     mImageCover.setVisibility(View.INVISIBLE);
+                    mProgressBar.setVisibility(View.INVISIBLE);
                 }
 
                 @Override
@@ -87,7 +87,6 @@ public class VideoListAdapter extends RecyclerView.Adapter<VideoListAdapter.Vide
 
                 @Override
                 public void onBufferingUpdateMainThread(int percent) {
-                    Log.i("VideoListAdapter", "从缓冲区加载数据...." + percent);
                 }
 
                 @Override
@@ -111,6 +110,7 @@ public class VideoListAdapter extends RecyclerView.Adapter<VideoListAdapter.Vide
             mVideoTitle.setText(item.getTitle());
             mImageCover.setVisibility(View.VISIBLE);
             Picasso.with(mContext).load(item.getImageResource()).into(mImageCover);
+            mProgressBar.setVisibility(View.VISIBLE);
         }
     }
 
